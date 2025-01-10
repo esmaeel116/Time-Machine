@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}CW031020{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% include 'header.html' %}
+    </header>
+    {% block content %}
+    <div>Hello World!</div>
+    {% endblock %}
+</body>
+</html>

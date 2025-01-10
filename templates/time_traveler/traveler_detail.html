@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Travelers
+{% endblock %}
+
+{% block content %}
+        <div>
+            <h3>first_name:</h3>
+            <span>{{traveler.first_name}}</span>
+        </div>
+        <div>
+            <h3>last_name:</h3>
+            <span>{{traveler.last_name}}</span>
+        </div>
+        <div>
+            <h3>national_code:</h3>
+            <span>{{traveler.national_code}}</span>
+        </div>
+        <div>
+            <h3>gender:</h3>
+            <p>{{traveler.gender}}</p>
+        </div>
+        <a href="{% url 'delete_time_traveler' traveler.id %}">Delete</a>
+        <a href="{% url 'edit_time_traveler' traveler.id %}">Edit</a>
+        <a href="{% url 'time_traveler_list' %}">List</a>
+        <hr>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Travelers
+{% endblock %}
+
+{% block content %}
+    {% for dest in time_traveler%}
+        <div>
+            <h3>first_name:</h3>
+            <span>{{dest.first_name}}</span>
+        </div>
+        <div>
+            <h3>last_name:</h3>
+            <span>{{dest.last_name}}</span>
+        </div>
+        <a href="{% url 'delete_time_traveler' dest.id %}">Delete</a>
+        <a href="{% url 'edit_time_traveler' dest.id %}">Edit</a>
+        <a href="{% url 'detail_time_traveler' dest.id %}">Detail</a>
+        <hr>
+    {% endfor %}
+{% endblock %}

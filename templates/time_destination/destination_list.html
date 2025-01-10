@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Dentinations
+{% endblock %}
+
+{% block content %}
+    {% for dest in time_destination%}
+        <div>
+            <h3>Name:</h3>
+            <span>{{dest.name}}</span>
+        </div>
+        <div>
+            <h3>Origin:</h3>
+            <span>{{dest.origin}}</span>
+        </div>
+        <div>
+            <h3>Destination:</h3>
+            <span>{{dest.destination}}</span>
+        </div>
+        <div>
+            <h3>Description:</h3>
+            <p>{{dest.destination}}</p>
+        </div>
+        <a href="{% url 'delete_time_destination' dest.id %}">Delete</a>
+        <a href="{% url 'edit_time_destination' dest.id %}">Edit</a>
+        <hr>
+    {% endfor %}
+{% endblock %}
